@@ -34,15 +34,23 @@
       <main role="main" class="inner cover">
         <h1 class="cover-heading">Stable Diffusion</h1>
         <p class="lead">This is a model that can be used to generate and modify images based on text prompts. It is a Latent Diffusion Model that uses a fixed, pretrained text encoder (CLIP ViT-L/14) as suggested in the Imagen paper.</p>
-        <p>
+        <div class="jumbotron">
+          <div class="row">
+            <div class="col">
+              <input type="range" min="1" max="100" value="50" class="slider" id="width">
+            </div>
+            <div class="col">
+              <input type="range" min="1" max="100" value="50" class="slider" id="height">
+            </div>
+          </div>
+
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="What do you want to generate?" aria-label="Prompt" aria-describedby="basic-addon2">
+                <input type="text" id="tbxPrompt" class="form-control" placeholder="What do you want to generate?" aria-label="Prompt" aria-describedby="basic-addon2">
                 <div class="input-group-append">
-                  <button class="btn btn-outline-secondary" type="button">Generate</button>
+                  <button class="btn btn-outline-secondary" type="button" id="btnGenerate">Generate</button>
                 </div>
             </div>
-        </p>
-
+        </div>
       </main>
 
       <footer class="mastfoot mt-auto">
@@ -56,9 +64,9 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"  crossorigin="anonymous"></script>
     <script src="/assets/js/vendor/popper.min.js"></script>
     <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/diffuse.js"></script>
   </body>
 </html>
