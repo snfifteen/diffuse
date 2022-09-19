@@ -60,7 +60,11 @@ func runIndex(w http.ResponseWriter, r *http.Request) {
 
 func runGenerate(w http.ResponseWriter, r *http.Request) {
 	r.ParseForm()
+	
 	prompt := r.FormValue("prompt")
+	width := r.FormValue("width")
+	height = r.FormValue("height")
+
 	w.Write([]byte(prompt))
 }
 
